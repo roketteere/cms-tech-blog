@@ -1,0 +1,41 @@
+{{! Dashboard }}
+<section class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1>Welcome, {{username}}</h1>
+      {{#if loggedIn}}
+        <button
+          class="btn btn-primary mb-4"
+          onclick="location.href='/blog/create'"
+        >Create Blog</button>
+      {{/if}}
+
+      {{#each blogPosts}}
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><a
+                href="/blog/preview/{{this.id}}"
+              >{{title}}</a></h5>
+            <p class="card-text">{{content}}</p>
+            <p class="card-text"><small class="text-muted">Created:
+                {{this.createdAt}}</small></p>
+            <p class="card-text"><small class="text-muted">Updated:
+                {{this.updatedAt}}</small></p>
+
+            {{#each comments}}
+              <div class="card mt-3">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Comment by
+                    {{this.username}}</h6>
+                  <p class="card-text">{{this.comment}}</p>
+                  <p class="card-text"><small class="text-muted">Created:
+                      {{this.createdAt}}</small></p>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

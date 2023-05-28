@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    {{#each blogPosts}}
+      <div class="card border-light bg-dark text-white mb-4 p-3">
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="text-muted">Posted by {{this.username}}</p>
+          <hr class="border-light" />
+          <p><strong>Post Content:</strong></p>
+          <p class="card-text">{{this.content}}</p>
+          <hr class="border-light" />
+          <p><strong>Created At:</strong> {{this.createdAt}}</p>
+          <hr class="border-light" />
+          <p><strong>Updated At:</strong> {{this.updatedAt}}</p>
+
+          {{#each this.comments}}
+            <div class="card border-light bg-dark text-white mt-3 p-2">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Comment by
+                  {{this.username}}</h6>
+                <hr class="border-light" />
+                <p><strong>Comment Content:</strong></p>
+                <p class="card-text">{{this.comment}}</p>
+                <hr class="border-light" />
+                <p><strong>Created At:</strong> {{this.createdAt}}</p>
+              </div>
+            </div>
+          {{/each}}
+
+          <form class="mt-3" action="/comment/{{this.id}}" method="POST">
+            <div class="mb-3">
+              <textarea
+                name="comment"
+                class="form-control"
+                rows="3"
+                placeholder="Write a comment..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Submit Comment</button>
+          </form>
+
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

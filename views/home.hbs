@@ -1,0 +1,46 @@
+<!-- Blog Post Section -->
+<table
+  class="table table-striped table-bordered table-responsive bg-dark text-white"
+>
+  <thead class="thead-light">
+    <tr>
+
+      <th scope="col" class="forum-col">Title</th>
+      <th scope="col">Blog Preview</th>
+      <th scope="col">Comments</th>
+      <th scope="col" class="last-post-col">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each blogPosts}}
+      <tr>
+
+        <td>
+          <h3 class="h5"><a
+              class="text-white"
+              href="/blog/preview/{{this.id}}"
+            >{{this.title}}</a></h3>
+        </td>
+        <td>
+          <p class="text-white">{{this.content}}</p>
+        </td>
+        <td>
+          <p class="text-white">{{this.comments.length}}</p>
+        </td>
+        <td>
+          <p class="text-white">Post Id: {{this.id}}</p>
+          <p class="text-white">User: {{this.username}}</p>
+          <p class="text-white">Created: {{this.createdAt}}</p>
+          <p class="text-white">Updated: {{this.updatedAt}}</p>
+        </td>
+
+      </tr>
+    {{/each}}
+  </tbody>
+
+</table>
+<script
+  type="application/json"
+  src="js/preview.js
+"
+></script>
