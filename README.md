@@ -26,6 +26,9 @@ Using Nodejs, Expressjs, Sequelize, MySQL, Express-Handlebars, and API's for ses
 Nodejs - https://nodejs.org/en
 MySQL - https://www.mysql.com/
 
+## Live Demo - Deployed to HerokuApp
+https://techytimeblog.herokuapp.com/
+
 ## Installation
 
 1. Clone this repo `git@github.com:roketteere/cms-tech-blog.git`
