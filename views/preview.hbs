@@ -1,0 +1,109 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <!-- Blog Post View Section -->
+    <div class="col-md-6">
+      <div class="card bg-dark border-light">
+        <div class="card-body">
+          <h3 class="text-center text-warning">View a Blog Post</h3>
+          <form id="blogPostForm">
+            <div class="mb-3">
+              <div><input
+                  class="blogId"
+                  type="hidden"
+                  id="blogId"
+                  name="blogId"
+                  value="{{id}}"
+                /></div>
+              <label
+                id="{{id}}"
+                for="blogTitle"
+                class="form-label text-white"
+              >Title:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="blogTitle"
+                name="title"
+                value="{{title}}"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="blogContent"
+                class="form-label text-white"
+              >Content:</label>
+              <textarea
+                class="form-control"
+                id="blogContent"
+                name="content"
+                rows="5"
+                readonly
+              >{{content}}</textarea>
+            </div>
+            <div class="text-center">
+              {{#if owner}}
+                <button
+                  id="editBtn"
+                  type="submit"
+                  class="btn btn-light"
+                  disabled
+                >Edit</button>
+              {{/if}}
+              <a href="/" class="btn btn-light">Cancel</a>
+            </div>
+          </form>
+
+          <div class="mb-3 mt-5">
+            <h4 class="text-center text-warning">Add a Comment</h4>
+            <form id="commentForm">
+              <input
+                id="username"
+                type="hidden"
+                name="username"
+                value="{{username}}"
+              />
+              <input type="hidden" name="postId" value="{{id}}" />
+              <div class="mb-3">
+                <label
+                  for="comment"
+                  class="form-label text-white"
+                >Comment:</label>
+                <textarea
+                  class="form-control"
+                  id="commentContent"
+                  name="comment"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button
+                  id="post-comment"
+                  type="submit"
+                  class="btn btn-light"
+                >Post Comment</button>
+              </div>
+            </form>
+          </div>
+
+          {{#each comments}}
+            <div class="card mt-3">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Comment by
+                  {{#if this.username}}
+                    {{this.username}}{{else}}Guest{{/if}}</h6>
+                <p class="card-text">{{this.comment}}</p>
+                <p class="card-text"><small class="text-muted">Created:
+                    {{this.createdAt}}</small></p>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="../../js/preview.js">
+
+</script>

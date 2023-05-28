@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <!-- Blog Post Section -->
+    <div class="col-md-6">
+      <div class="card bg-dark border-light">
+        <div class="card-body">
+          <h3 class="text-center text-warning">Create a Blog Post</h3>
+          <form action="/api/blog/create" method="post">
+            <div class="mb-3">
+              <label
+                for="blogTitle"
+                class="form-label text-white"
+              >Title:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="blogTitle"
+                name="title"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="blogContent"
+                class="form-label text-white"
+              >Content:</label>
+              <textarea
+                class="form-control"
+                id="blogContent"
+                name="content"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-light">Post</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

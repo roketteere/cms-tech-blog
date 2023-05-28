@@ -1,0 +1,94 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <!-- Login Section -->
+    <div class="col-md-6">
+      <div class="card bg-dark border-light mb-5">
+        <div class="card-body">
+          <h3 class="text-center text-warning">Login</h3>
+          <form action="/api/user/login" method="post">
+            <div class="mb-3">
+              <label
+                for="loginUsername"
+                class="form-label text-white"
+              >Username:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="loginUsername"
+                name="username"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="loginPassword"
+                class="form-label text-white"
+              >Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="loginPassword"
+                name="password"
+                required
+              />
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-light">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Signup Section -->
+    <div class="col-md-6">
+      <div class="card bg-dark border-light">
+        <div class="card-body">
+          <h3 class="text-center text-warning">Signup</h3>
+          <form action="/api/user/signup" method="post">
+            <div class="mb-3">
+              <label
+                for="signupUsername"
+                class="form-label text-white"
+              >Username:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="signupUsername"
+                name="username"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label text-white">Email
+                address:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="signupEmail"
+                name="email"
+                aria-describedby="emailHelp"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="signupPassword"
+                class="form-label text-white"
+              >Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="signupPassword"
+                name="password"
+                required
+              />
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-light">Signup</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
